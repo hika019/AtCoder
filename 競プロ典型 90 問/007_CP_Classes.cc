@@ -20,7 +20,6 @@ int main(){
     int fuga = 2147483647;
 
     if(index <N) hoge = std::abs(B[i]-A[index]);
-
     if(index >0) fuga = std::abs(B[i]-A[index-1]);
     std::cout << std::min(hoge, fuga) << '\n';
 
