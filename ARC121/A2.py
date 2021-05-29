@@ -7,14 +7,19 @@ def kyori_i(a, b):
 
 n = int(input())
 
+array = []
 x = []
 y = []
+onazi = []
 
 for i in range(n):
     tmp= list(map(int, input().split()))
     x.append(tmp[0])
     y.append(tmp[1])
     
+
+
+onazi.sort()
 x.sort()
 y.sort()
 
@@ -30,11 +35,18 @@ data_y.append(kyori_i(y[0], y[n-1]))
 data_y.append(kyori_i(y[0], y[n-2]))
 data_y.append(kyori_i(y[1], y[n-1]))
 
-data_x.sort()
-data_y.sort()
+
+
 
 data += data_x
 data += data_y
 
+
+fuga = 0
+if y[n-1] == x[n-1]:
+    fuga = 1
+if onazi == x:
+    fuga = 1
+
 data.sort()
-print(data[len(data)-2])
+print(abs(data[4-fuga]))
