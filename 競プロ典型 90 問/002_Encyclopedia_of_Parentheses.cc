@@ -3,32 +3,27 @@
 #include <algorithm>
 using namespace std;
 
+bool hantei(string S) {
+	int dep = 0;
+	for (int i = 0; i < S.size(); i++) {
+		if (S[i] == '(') dep += 1;
+		if (S[i] == ')') dep -= 1;
+		if (dep < 0) return false;
+	}
+	if (dep == 0) return true;
+	return false;
+}
+
 string int_to_bin(int a, int n){
   string hoge ="";
-  int ans = 0;
-  if(a == 0){
-    hoge += ")";
-  }
-
-  while(a!=0 && ans >=0){
-    if(a%2 == 0){
-      hoge += ")";
-      ans +=1;
-    }else{
-       hoge += "(";
-       ans -= 1;
-    }
+  while(a!=0){
+    if(a%2 == 0)hoge += "(";
+    else hoge += ")";
     a /=2;
   }
-  while(hoge.length() != n){
-    hoge +="(";
-    ans =100;
-  }
+  while(hoge.length() != n)hoge +="(";
 
-  if(ans == 0){
-    std::reverse(hoge.begin(), hoge.end());
-    std::cout << hoge << '\n';
-  }
+  if(hantei(hoge)) std::cout << hoge << '\n';
   return hoge;
 }
 
@@ -38,6 +33,7 @@ int main(){
   cin >> N;
   for(int i=(1 << N)-1; i>=0; i--){
     tmp = int_to_bin(i, N);
+    //std::cout << tmp << '\n';
     //cheack(tmp);
   }
 
