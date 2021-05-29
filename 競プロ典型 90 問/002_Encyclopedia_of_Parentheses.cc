@@ -23,7 +23,9 @@ string int_to_bin(int a, int n){
   }
   while(hoge.length() != n)hoge +="(";
 
-  if(hantei(hoge)) std::cout << hoge << '\n';
+  std::cout << hoge << '\n';
+
+  //if(hantei(hoge)) std::cout << hoge << '\n';
   return hoge;
 }
 
