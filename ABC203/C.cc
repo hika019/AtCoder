@@ -1,33 +1,32 @@
 #include "iostream"
 #include <algorithm>
+#include <vector>
 
+using namespace std;
 
 int main(){
   long long int n , i;
   long long int k;
   std::cin >> n >> k;
 
-  long long int tomo[n][2];
-  long long int en[n];
-  long long int hoge [n];
-  long long int array[n][2];
+  vector<pair<long long, int>> array(n);
 
   for(i=0; i<n; ++i){
-    std::cin >> tomo[i][0] >> hoge[i];
-    tomo[i][1] = i;
+    std::cin >> array[i].first >> array[i].second;
   }
 
-    std::sort(tomo, tomo+n);
+    std::sort(array.begin(), array.end());
 
 
-
-    //std::sort(en, en+n);
-    //std::sort(array, array+n);
+    /*
+    for(i=0; i<n; i++){
+      std::cout << array[i].first << array[i].second << '\n';
+    }*/
 
     for(i=0; i<n; i++){
-
-      if(k-array[0][n] >= 0){
-        k+=array[1][n];
+      //std::cout << k-array[n].first << '\n';
+      if(k-array[i].first >= 0){
+        k+=array[i].second;
       }else{
         break;
       }
