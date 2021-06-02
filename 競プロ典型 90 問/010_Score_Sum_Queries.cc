@@ -1,14 +1,17 @@
 #include <iostream>
 
+int n, i, q;
+int c[100001], p[100001];
+int l[100001], r[100001];
+int ans1[100001]={}, ans2[100001]={};
+
 int main() {
   int n, i, q;
 
   std::cin >> n;
-  int c[n], p[n], ans1[n+1]={0}, ans2[n+1]={0};
   for(i=0; i<n; i++) std::cin >> c[i] >> p[i];
 
   std::cin >> q;
-  int l[n], r[n];
   for(i=0; i<q; i++) std::cin >> l[i] >> r[i];
 
 
