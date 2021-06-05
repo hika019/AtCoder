@@ -1,5 +1,7 @@
 #include <iostream>
+#include <cmath>
 #include <algorithm>
+using namespace std;
 
 int a[100001];
 int b[100001];
