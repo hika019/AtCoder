@@ -27,7 +27,7 @@ ans += (ans *(n-1)-hiku*2)%m;
 
 size = n/2;
 i = 2;
-while(size >1){
+while(size >0){
   tmp =0;
   count = 0;
   int lef= n-1-i, rig=n-1;
@@ -38,11 +38,10 @@ while(size >1){
     rig--;
     count ++;
   }
-  std::cout << size << '\n';
 
   ans = ((ans- tmp*2)%m + (sum*count)%m)%m;
 
-  size = size/2;
+  size--;
 
   //std::cout << "ans: " << ans << '\n';
 }
