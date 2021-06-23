@@ -18,9 +18,10 @@ int main(){
   for(int i=0; i<n; ++i){
     count += abs(a[i]-b[i]);
   }
-  std::cout << count << '\n';
+  //std::cout << count << '\n';
 
-  if((k-count)%2 == 0) std::cout << "Yes" << '\n';
+  if(count>=k) std::cout << "No" << '\n';//countがkを超えた場合がある
+  else if((k-count)%2 == 0) std::cout << "Yes" << '\n';
   else std::cout << "No" << '\n';
 
 
